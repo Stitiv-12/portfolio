@@ -6,8 +6,8 @@
     background-color: #3D5467;
     color: white;
     border-radius: 30px;
-    height: 60px;
     padding: 20px;
+    box-sizing: border-box;
   }
   
   .logo {

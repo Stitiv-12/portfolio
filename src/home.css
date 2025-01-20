@@ -1,42 +1,48 @@
 .Home {
     display: flex;
     flex: 1;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     background-color: #3D5467;
     border-radius: 30px;
     padding: 20px; /* Ajout d'un padding pour éviter que le contenu colle aux bords */
     box-sizing: border-box; /* Inclut le padding dans les dimensions */
-    z-index: 1;
+    
 }
 
 .info-global {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-end; /* Aligne le contenu en bas */
-    height: 100%; /* Prend toute la hauteur disponible dans .Home */
-    gap: 20px; /* Espacement entre les enfants */
-    z-index: 1;
+    align-items: start;
+    gap: 10%; /* Espacement entre les enfants */
+    min-width: 40%;
+    
 }
 
 .info-detail {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; /* Aligne les éléments horizontalement à droite */
-    gap: 100px; /* Espacement horizontal entre les colonnes */
-    z-index: 1;
+    justify-content: flex-start; /* Aligne les éléments horizontalement à droite */
+    gap: 20%; /* Espacement horizontal entre les colonnes */
+    
 }
 
 .Categories {
     display: flex;
+    flex: 1;
+    padding: 3%;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center; /* Centrer les catégories verticalement */
     align-items: flex-end; /* Aligner les catégories à droite */
-    gap: 20px; /* Espacement entre les catégories */
-    width: 100%; /* Prend toute la largeur disponible */
-    height: 100%; /* Prend toute la hauteur disponible */
-    perspective: 800px; /* Perspective pour les animations 3D */
+    margin-right: 1%;
+    gap: 20px; /* Espacement entre les catégories */   
+    perspective: 1000px; /* Perspective pour les animations 3D */
     z-index: 1;
+    min-width: 50%;
 }
 
 .Categorie {
@@ -52,10 +58,10 @@
     text-align: center;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 600px;
+    min-width: 100%;
+    width: 80%;
     z-index: 1;
     pointer-events: auto;
-    animation-play-state: paused; /* Animation en pause au début */
 }
 
 .Categorie:hover {
@@ -64,28 +70,56 @@
     z-index: 10;
 }
 
-.Categorie:not(:hover) {
-    animation: rotateToDefault 1s ease forwards;
-}
+
 
 /* Animation pour afficher la catégorie de face */
 @keyframes rotateToFace {
     0% {
+        margin: 0;
         transform: rotateX(0deg) rotateY(-45deg); /* Position initiale inclinée */
     }
     100% {
+        margin: 20px;
         transform: rotateX(0deg) rotateY(0deg); /* Position finale de face */
     }
 }
 
 @keyframes rotateToDefault {
     0% {
+        margin: 20px;
         transform: rotateX(0deg) rotateY(0deg);
         
     }
     100% {
+        margin: 0;
         transform: rotateX(0deg) rotateY(-45deg); /* Position initiale inclinée */
     }
 }
 
 
+@media (max-width: 1200px) {
+    .Home {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Categories {
+        justify-content: start; /* Centrer les catégories verticalement */
+        align-items: center; /* Aligner les catégories à droite */
+        margin-right: 0;
+        gap: 20px; /* Espacement entre les catégories */   
+        perspective: 1000px; /* Perspective pour les animations 3D */
+        z-index: 1;
+        min-width: 50%;
+        max-width: 80%;
+    }
+    .info-global {
+        
+        flex-direction: column;
+        justify-content: flex-start; /* Aligne le contenu en bas */
+        align-items: start;
+        gap: 10%; /* Espacement entre les enfants */
+        min-width: 40%;
+        
+    }
+    
+}
