@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./app.css"; // Importation du fichier CSS
 import Header from "./header";
 import Home from "./home";
