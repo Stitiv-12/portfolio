@@ -1,1 +1,36 @@
-
+/* Réinitialisation globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assure que les bordures et padding sont inclus dans les dimensions */
+  }
+  
+  /* Applique la hauteur stricte au body et à html */
+  html, body {
+    height: 100%; /* Le body et html occupent toute la hauteur de la fenêtre */
+    overflow: hidden; /* Pas de barre de défilement */
+  }
+  
+  /* Conteneur principal */
+  .global {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* La hauteur totale correspond à celle de la fenêtre */
+    overflow: hidden; /* Aucun débordement autorisé */
+    gap:10px;
+    padding: 1%;
+  }
+  
+  /* Ajustement des sections Header et Home */
+  header {
+    flex-shrink: 0; /* Ne rétrécit pas */
+  }
+  
+  .Home {
+    flex: 1; /* Prend tout l'espace restant */
+    display: flex; /* Optionnel : Utilisation de flexbox pour centrer */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    overflow: hidden; /* Empêche les débordements internes */
+  }
+  
